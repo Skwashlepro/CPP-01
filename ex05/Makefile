@@ -1,6 +1,6 @@
 NAME 		= Harl
 CFLAGS		= -Wall -Werror -Wextra -std=c++98
-CC			= c++
+CXX			= c++
 VPATH		= srcs
 
 SRC_FILES	= main \
@@ -10,11 +10,11 @@ OBJ	= $(addsuffix .o, $(SRC_FILES))
 
 all: $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -I/usr/include -c $< -o $@
+%.o: %.cpp
+	$(CXX) $(CFLAGS) -I/usr/include -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CXX) $(OBJ) -o $(NAME)
 
 clean:
 	rm -f ${OBJ}
